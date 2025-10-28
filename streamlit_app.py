@@ -15,8 +15,10 @@ import numpy.random as np_random # Use numpy.random for random choices
 # -----------------------------------------------------
 # This ensures the 'punkt' tokenizer data is available on the cloud server.
 try:
+    # Check if 'punkt' data is already available
     nltk.data.find('tokenizers/punkt')
-except nltk.downloader.DownloadError:
+except LookupError: # <--- CHANGED TO CATCH LookupError which is raised by nltk.data.find()
+    # If not found, download it. This only runs the first time the app starts.
     nltk.download('punkt')
 # -----------------------------------------------------
 # END NLTK FIX
