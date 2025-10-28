@@ -1,3 +1,5 @@
+# streamlit_app.py
+
 import streamlit as st
 import nltk
 import numpy as np
@@ -6,18 +8,30 @@ import pickle
 from nltk.stem.lancaster import LancasterStemmer
 from tensorflow.keras.models import load_model
 import re 
-import random # Already used implicitly by np.random.choice, but good practice
+import numpy.random as np_random # Use numpy.random for random choices
 
-# --- INITIAL SETUP (Load files and core functions) ---
+# -----------------------------------------------------
+# CRITICAL FIX: DOWNLOAD NLTK DATA FOR STREAMLIT CLOUD
+# -----------------------------------------------------
+# This ensures the 'punkt' tokenizer data is available on the cloud server.
+try:
+    nltk.data.find('tokenizers/punkt')
+except nltk.downloader.DownloadError:
+    nltk.download('punkt')
+# -----------------------------------------------------
+# END NLTK FIX
+# -----------------------------------------------------
+
 
 # Initialize Stemmer
 stemmer = LancasterStemmer()
 
-# Load necessary files
-try:
-    # Use st.cache_resource to load models and data only once
-    @st.cache_resource
-    def load_data():
+# --- INITIAL SETUP (Load files and core functions) ---
+
+@st.cache_resource
+def load_data():
+    """Load the model and all data files once when the app starts."""
+    try:
         data = pickle.load(open("training_data.pkl", "rb"))
         words = data['words']
         classes = data['classes']
@@ -30,15 +44,17 @@ try:
             college_data = json.load(file)
             
         return words, classes, model, intents_data, college_data
-
-    words, classes, model, intents_data, college_data = load_data()
-    
-except Exception as e:
-    st.error(f"Failed to load required data files. Please ensure all files are in the directory. Error: {e}")
-    st.stop() # Stop the app if files aren't found
+    except Exception as e:
+        # If loading fails, raise a Streamlit error to stop the app
+        st.error(f"Failed to load required data files. Please ensure all files (model.keras, .pkl, .json) are present. Error: {e}")
+        st.stop()
 
 
-# --- CORE NLP AND FACTUAL FUNCTIONS (Copied from chat_gui.py) ---
+# Load all resources
+words, classes, model, intents_data, college_data = load_data()
+
+
+# --- CORE NLP AND FACTUAL FUNCTIONS ---
 
 def clean_up_sentence(sentence):
     """Tokenize and stem the sentence."""
@@ -59,19 +75,22 @@ def bow(sentence, words):
 def classify_local(sentence):
     """Classify the intent of the sentence."""
     p = bow(sentence, words)
-    results = model.predict(np.array([p]), verbose=0)[0] # Added verbose=0 for cleaner output
+    # The model expects a batch of inputs, so we wrap p in an array
+    results = model.predict(np.array([p]), verbose=0)[0] 
+    # Filter out predictions below a threshold (e.g., 0.7)
     results = [[i, r] for i, r in enumerate(results) if r > 0.7] 
+    
     results.sort(key=lambda x: x[1], reverse=True)
     return_list = []
     for r in results:
         return_list.append({"intent": classes[r[0]], "probability": str(r[1])})
     return return_list
 
-# --- FIXED FUNCTION TO RETRIEVE FACTS ---
-def get_factual_response(tag, data):
+# --- UPDATED FUNCTION TO RETRIEVE FACTS (Added user_message parameter) ---
+def get_factual_response(tag, data, user_message=""):
     """Retrieves detailed facts based on the predicted tag."""
     
-    # Corrected Access: Accessing keys directly from the root 'data' dictionary with safe .get() calls
+    # Access key data structures
     accreditation = data.get('accreditation_and_rankings', {})
     admin_support = data.get('administrative_and_student_support', {})
     admin_personnel = admin_support.get('key_personnel', {})
@@ -85,20 +104,32 @@ def get_factual_response(tag, data):
     if tag == "college_name_query":
         return f"The full name is **{data.get('college_name', 'Nehru Memorial College')} (Autonomous)**. It's located at {data.get('location', 'Puthanampatti')}."
 
-    # Logic for Principal, Secretary, and VP
+    # Logic for Principal, Secretary, and VP (Now uses user_message for specificity)
     elif tag == "principal_query":
         principal = admin_personnel.get('principal', 'N/A') 
         president = admin_personnel.get('president', 'N/A')
         secretary = admin_personnel.get('secretary', 'N/A')
         vice_principal = admin_personnel.get('vice_principal', 'N/A')
         
+        lower_msg = user_message.lower()
+        
+        # Smart lookup based on keywords in the original message
+        if "principal" in lower_msg and "vice" not in lower_msg:
+            return f"The **Principal** of NMC is **{principal}**."
+        elif "secretary" in lower_msg:
+            return f"The **Secretary** of NMC is **{secretary}**."
+        elif "president" in lower_msg:
+            return f"The **President** of NMC is **{president}**."
+        elif "vice principal" in lower_msg or "vp" in lower_msg:
+            return f"The **Vice Principal** of NMC is **{vice_principal}**."
+        
+        # Default response if no specific keyword is found
         return (
             f"The key administrative personnel are:\n"
             f"- **Principal:** {principal}\n"
-            f"- **President:** {president}"
+            f"- **President:** {president}\n"
             f"- **Secretary:** {secretary}\n"
             f"- **Vice Principal:** {vice_principal}"
-            
         )
 
     elif tag == "facilities_query":
@@ -171,7 +202,7 @@ def get_factual_response(tag, data):
             
             if name == "Other Allied/SF Programs": continue 
 
-            response += f"\n**{name}**:\n  UG: {ug}\n  PG: {pg}"
+            response += f"\n**{name}**:\n  UG: {ug}\n  PG: {pg}"
             
         return response.strip()
 
@@ -197,20 +228,20 @@ def get_factual_response(tag, data):
         
         # 1. Add top-level personnel
         for title, name in admin_personnel.items():
-             response += f"- **{title.replace('_', ' ').title()}:** {name}\n"
-             
+            response += f"- **{title.replace('_', ' ').title()}:** {name}\n"
+            
         response += "\n**Deans and Coordinators:**\n"
         
         # 2. Add Deans and Coordinators
         for title, name in admin_deans.items():
-             response += f"- **{title.replace('_', ' ').title()}:** {name}\n"
-             
+            response += f"- **{title.replace('_', ' ').title()}:** {name}\n"
+            
         return response.strip()
 
     return None # Return None if tag is not a factual query
 
 
-def get_response(ints, intents_json, college_data):
+def get_response(ints, intents_json, college_data, user_message):
     """Retrieve a random response based on the classified intent, handling facts separately."""
     if not ints:
         return "I didn't quite understand that. Can you rephrase or ask about the college general information?"
@@ -219,7 +250,8 @@ def get_response(ints, intents_json, college_data):
     
     # 1. Check if the intent is a Factual Query
     if tag.endswith("_query"):
-        factual_answer = get_factual_response(tag, college_data)
+        # Pass the user message to allow for specific lookups (e.g., "who is the secretary?")
+        factual_answer = get_factual_response(tag, college_data, user_message)
         if factual_answer:
             return factual_answer
     
@@ -227,17 +259,19 @@ def get_response(ints, intents_json, college_data):
     list_of_intents = intents_json['intents']
     for i in list_of_intents:
         if i['tag'] == tag:
-            result = np.random.choice(i['responses'])
+            result = np_random.choice(i['responses'])
             
             if result.startswith("GET_"):
-                 return "I recognized the intent, but the dynamic lookup failed (Internal logic error)."
+                # This should not happen with the current setup
+                return "I recognized the intent, but the dynamic lookup failed (Internal logic error)."
             
             return result
             
     return "Sorry, I can't find a response for that specific topic."
 
 
-# --- GUI Setup (Remains the same) ---
+# --- STREAMLIT CHAT INTERFACE ---
+
 st.set_page_config(page_title="NMC Chatbot", layout="wide")
 st.title("🏛️ NMC College Chatbot")
 st.markdown("Ask me about facilities, courses, HODs, or placements!")
@@ -247,28 +281,27 @@ if "messages" not in st.session_state:
     st.session_state.messages = []
     # Add initial bot message
     st.session_state.messages.append({"role": "assistant", 
-                                     "content": "Hello! I'm the NMC Chatbot. Ask me about general college information, like 'facilities', 'principal', or 'courses'."})
+                                      "content": "Hello! I'm the NMC Chatbot. Ask me about general college information, like **'facilities'**, **'principal'**, or **'courses'**."})
 
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
-        # Use markdown for rich text formatting (like **bold**)
         st.markdown(message["content"])
 
 # Accept user input
 if prompt := st.chat_input("Ask a question about NMC..."):
-    # Add user message to chat history
+    # 1. Display user message
     st.session_state.messages.append({"role": "user", "content": prompt})
-    # Display user message in chat message container
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    # Get bot response
+    # 2. Get bot response
     with st.spinner("Thinking..."):
         ints = classify_local(prompt)
-        res = get_response(ints, intents_data, college_data) 
+        # --- CRITICAL: PASS 'prompt' HERE for specific intent handling ---
+        res = get_response(ints, intents_data, college_data, prompt) 
     
-    # Display assistant response in chat message container
+    # 3. Display assistant response
     with st.chat_message("assistant"):
         st.session_state.messages.append({"role": "assistant", "content": res})
         st.markdown(res)
