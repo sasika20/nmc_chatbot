@@ -1,0 +1,8 @@
+scikit-learn
+streamlit
+tensorflow
+numpy
+nltk
+pandas
+scipy
+# Add any other libraries you might have installed, like scikit-learn if you used it

@@ -1,0 +1,86 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi", "Hello", "Good day", "Is anyone there?", "Hey", "Greetings"],
+      "responses": ["Hello! Welcome to NMC Chatbot. How can I assist you today?", "Hi there! Ask me about NMC, Puthanampatti.", "Good to see you! What would you like to know about the college?"]
+    },
+    {
+      "tag": "contact",
+      "patterns": ["How can I contact the college?", "College phone number", "NMC email address"],
+      "responses": ["You can reach the college at **+91 98429 56720** or email at **nmcfrontoffice@gmail.com**. The campus is located in Puthanampatti, Tiruchirappalli - 621007."]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thank you", "Thanks a lot", "That helps", "Good job"],
+      "responses": ["You're welcome! Feel free to ask if you have any other questions.", "Happy to help! Have a great day.", "Glad I could assist you."]
+    },
+    { 
+      "tag": "bye",
+      "patterns": ["Bye", "Goodbye", "See you later", "Gotta go"],
+      "responses": ["Goodbye! Visit our website at www.nmc.ac.in for more details.", "Have a productive day!", "See you soon!"]
+    },
+    
+    
+    {
+      "tag": "college_name_query",
+      "patterns": ["What is the college name?", "NMC full name", "What is NMC full form", "Where is the college located"],
+      "responses": ["GET_COLLEGE_NAME_AND_LOCATION"]
+    },
+    {
+      "tag": "principal_query",
+      "patterns": ["who is the principal", "principal name", "who is the head", "name of the principal", "secretary name", "who is the vice principal"],
+      "responses": ["GET_ADMIN_PERSONNEL"]
+    },
+    {
+      "tag": "facilities_query",
+      "patterns": ["what facilities are available", "college facilities", "infrastructure details", "Wi-Fi speed", "total labs"],
+      "responses": ["GET_FACILITIES_SUMMARY"]
+    },
+    {
+      "tag": "hostel_query",
+      "patterns": ["hostel facility", "boys hostel capacity", "girls hostel capacity", "hostel details", "hostel names"],
+      "responses": ["GET_HOSTEL_DETAILS"]
+    },
+    {
+      "tag": "programs_count_query",
+      "patterns": ["How many courses are offered", "total number of programs", "total courses", "how many UG and PG programs"],
+      "responses": ["GET_PROGRAMS_COUNT"]
+    },
+    {
+      "tag": "pg_query",
+      "patterns": ["PG courses available", "Masters programs list", "MSc courses", "MBA and MCA programs"],
+      "responses": ["GET_PG_COURSES"]
+    },
+    {
+      "tag": "placement_query",
+      "patterns": ["placement details", "highest salary", "average salary", "top recruiters", "placement statistics"],
+      "responses": ["GET_PLACEMENT_SUMMARY"]
+    },
+    {
+      "tag": "accreditation_query",
+      "patterns": ["NAAC grade", "NAAC accreditation status", "What is the NAAC score", "NAAC status"],
+      "responses": ["GET_NAAC_ACCREDITATION"]
+    },
+    {
+      "tag": "data_science_query",
+      "patterns": ["data science courses", "MSc Data Science", "BSc Data Science", "who is the HOD for data science", "details about data science"],
+      "responses": ["GET_DATA_SCIENCE_DETAILS"]
+    },
+    {
+  "tag": "all_departments_query",
+  "patterns": ["list all departments", "tell me all department details", "what are the main departments", "show all department names"],
+  "responses": ["GET_ALL_DEPARTMENTS_SUMMARY"]
+},
+{
+      "tag": "all_admin_query",
+      "patterns": ["full list of administrative staff", "all key personnel names", "who are the deans and coe", "list all college heads"],
+      "responses": ["GET_ALL_ADMIN_PERSONNEL"]
+    },
+{
+  "tag": "all_hods_query",
+  "patterns": ["list all HOD names", "who are all the department heads", "full list of HODs", "all head of departments"],
+  "responses": ["GET_ALL_HOD_LIST"]
+}
+  ]
+}

@@ -1,0 +1,328 @@
+{
+  "college_name": "Nehru Memorial College (Autonomous)",
+  "location": "Puthanampatti, Tiruchirappalli - 621007, Tamil Nadu, India",
+  "establishment_details": {
+    "established_year": 1967,
+    "founder": "Late Shri. Mookka Pillai",
+    "affiliation": "Bharathidasan University, Tiruchirappalli",
+    "status": "Autonomous, Private - Government-aided",
+    "recognition": "UGC (Sec 2(f) and 12(B))",
+    "motto": "Knowledge, Justice and Peace",
+    "special_achievement": "Pioneered **B.Sc. Computer Science** among Arts and Science Colleges at the national level as early as **1983**."
+  },
+  "accreditation_and_rankings": {
+    "naac_accreditation": "'A+' Grade in Second Cycle (2022)",
+    "nirf_ranking_2025": "Rank-band: 101-150 (College)",
+    "ugc_recognition": "Sec 2(f) and 12(B)",
+    "dst_fist_status": "DST-FIST College (2019)",
+    "milestones": [
+      {"year": 2004, "event": "Granted Autonomous status by UGC"},
+      {"year": 2013, "event": "NAAC with 'A' Grade (I Cycle)"},
+      {"year": 2017, "event": "Started M.Sc Data Science"},
+      {"year": 2019, "event": "DST-FIST College (Sanctioned 35.5 Lacs for Physics)"},
+      {"year": 2019, "event": "Established Exclusive Research Block (8000 Sq. Ft.)"},
+      {"year": 2022, "event": "Nationally Reaccredited with 'A+' Grade by NAAC (II Cycle)"}
+    ]
+  },
+  "academic_programs_summary": {
+    "total_courses_offered": "62 courses across 14 degrees (approx.)",
+    "total_programs_count": {
+      "ug": 15,
+      "pg": 15,
+      "mphil": 11,
+      "phd": 11,
+      "other": "B.Ed. (separate college unit), Diploma and Certificate Courses"
+    },
+    "ug_courses_dual_stream": {
+      "aided_stream": [
+        "B.A. Economics", 
+        "B.Com. Commerce", 
+        "B.Sc. Computer Science", 
+        "B.Sc. Chemistry", 
+        "B.Sc. Mathematics", 
+        "B.Sc. Physics", 
+        "B.Sc. Zoology"
+      ],
+      "self_financed_stream_sf": [
+        "B.A. Tamil", 
+        "B.A. English", 
+        "B.Com. Commerce", 
+        "B.Com. Computer Applications", 
+        "B.Sc. Botany", 
+        "B.Sc. Data Science", 
+        "B.Sc. Artificial Intelligence and Machine Learning (AIML)", 
+        "B.Sc. Hotel Management and Catering Science", 
+        "BCA (AICTE Approved)", 
+        "BBA (AICTE Approved)",
+        "B.Sc. Nutrition & Dietetics",
+        "B.A. History"
+      ]
+    },
+    "pg_courses": [
+      "M.Sc. Physics (Aided)", 
+      "M.A. Tamil", 
+      "M.A. English", 
+      "M.Com.", 
+      "M.Sc. Computer Science", 
+      "M.Sc. Data Science", 
+      "M.Sc. Bio Technology", 
+      "MCA (AICTE Approved)", 
+      "MBA (AICTE Approved)", 
+      "M.Sc. Embedded Systems (UGC-sanctioned)"
+    ]
+  },
+  "key_heads_of_department_full_list": {
+    "HOD_Physics": "Dr. A. Rajendran",
+    "HOD_Chemistry": "Dr. D. Viji Saral Elezabeth",
+    "HOD_Computer_Science_Aided": "Dr. S. Charles Britto",
+    "HOD_Commerce": "Dr. T. Gayathri",
+    "HOD_Zoology": "Dr. P. Neelanarayanan",
+    "HOD_Mathematics": "Dr. V. Saavithri (Also Dean, Academic Affairs)",
+    "HOD_English_Aided": "Dr. K.T. Tamilmani (Also Vice Principal)",
+    "HOD_Tamil_Aided": "Dr. S. Rajendran",
+    "HOD_Economics_Aided": "Dr. T. Porselvi",
+    "HOD_Botany_SF": "Dr. M. Meenakshisundaram",
+    "HOD_Data_Science_SF": "Mrs. N. Kalpana",
+    "HOD_Management_Studies_SF": "Mrs. S. Priyadharshini",
+    "HOD_HMCS_SF": "Mr. N. Narendrakumar",
+    "DIRECTOR_MCA": "Dr. D. JayaChithra"
+  },
+  "departments_details": [
+    {
+      "department_name": "Commerce",
+      "established_ug": 1981,
+      "established_pg": 1994,
+      "research_centre_status": "Research Centre since 2000",
+      "ug_programs": ["B.Com. Commerce (Aided/SF)", "B.Com. Computer Applications (SF)"],
+      "pg_programs": ["M.Com. (SF)"],
+      "research_programs": ["M.Phil. Commerce", "Ph.D. Commerce"],
+      "faculty_strength": {"aided": 4, "self_supporting": 15},
+      "student_strength_approx": {"B.Com": 650, "M.Com": 100}
+    },
+    {
+      "department_name": "Physics",
+      "established_ug": 1969,
+      "research_centre_status": "Research Department since 2001 (DST-FIST funded)",
+      "ug_programs": ["B.Sc. Physics (Aided/SF)"],
+      "pg_programs": ["M.Sc. Physics (Aided/SF)"],
+      "research_programs": ["M.Phil. Physics", "Ph.D. Physics"],
+      "faculty_strength": {"total": 24, "aided": 12, "self_supporting": 12},
+      "research_areas": ["Nonlinear Dynamics", "Nonlinear Electronics", "Crystal Growth", "Nanoscience", "Polymer Batteries", "Spectroscopy"],
+      "funding_note": "Fetched over ₹70 Lakhs from UGC, DST and other agencies for research."
+    },
+    {
+      "department_name": "Zoology",
+      "established_ug": 1982,
+      "research_centre_status": "Research Centre since 2005",
+      "ug_programs": ["B.Sc. Zoology (Aided/SF)"],
+      "pg_programs": ["M.Sc. Zoology (SF)"],
+      "research_programs": ["M.Phil. Zoology (FT/PT, SF)", "Ph.D. Zoology (FT/PT, SF)"],
+      "faculty_strength": {"aided": 4, "self_supporting": 6, "note": "All Aided faculty members are PhD holders."},
+      "key_centers": ["Centre for Eco-friendly Agro-Technologies (CEAT)"],
+      "ceat_activities": "Production of **Vermicompost** (generating over ₹24 Lakhs revenue since 2007)",
+      "major_projects": "5 Major Research Projects completed (totaling over ₹77 Lakhs), 1 Major Project ongoing (₹37 Lakhs from SERB)",
+      "diploma_program": "Advanced Diploma in Biofertilizers and Vermiculture"
+    },
+    {
+      "department_name": "Chemistry",
+      "established_ug": 1977,
+      "established_pg": 2007,
+      "research_centre_status": "Research Department since 2012",
+      "ug_programs": ["B.Sc. Chemistry (Aided/SF)"],
+      "pg_programs": ["M.Sc. Chemistry (SF)"],
+      "research_programs": ["M.Phil. Chemistry", "Ph.D. Chemistry"],
+      "faculty_strength": {"total": 16, "aided": 6, "self_supporting": 10},
+      "research_areas": ["Biological Oxidation", "Corrosion studies", "Computational chemistry", "Phytochemistry", "Medicinal chemistry"],
+      "patents": "Two patents in Larvicidal compounds and their processes",
+      "mou": "Signed MOU with TIDITSSIA (Industry Association)"
+    },
+    {
+      "department_name": "Computer Science & Applications (including MCA/BCA)",
+      "established_ug": 1983,
+      "research_centre_status": "Research Centre since 2013",
+      "pioneer_status": "First to introduce B.Sc. Computer Science in Arts and Science colleges in India (1983)",
+      "ug_programs": ["B.Sc. Computer Science (Aided/SF)", "B.C.A. (AICTE Approved, SF)"],
+      "pg_programs": ["M.Sc. Computer Science (SF)", "M.C.A. (AICTE Approved, SF)"],
+      "research_programs": ["M.Phil. Computer Science", "Ph.D. Computer Science"],
+      "faculty_strength": {"aided": 4, "self_supporting": 7},
+      "specializations_and_focus": ["Data Mining", "Data Base and Networks", "**AI and Machine Learning**", "Internet of Things (IoT)", "Cloud Computing"],
+      "infrastructure": {"note": "Total of **4 Computer Labs**."}
+    },
+    {
+      "department_name": "English",
+      "established_ug_aided": 1967,
+      "established_ug_sf": 2009,
+      "established_pg": 2014,
+      "research_centre_status": "Research Department since 2019",
+      "ug_programs": ["B.A. English Literature (SF)"],
+      "pg_programs": ["M.A. English Literature (SF)"],
+      "research_programs": ["M.Phil. English (FT/PT)", "Ph.D. English (FT/PT)"],
+      "faculty_strength": {"aided": 4, "self_financed": 13},
+      "department_clubs": ["Lyceum", "Drama Club", "Film Appreciation Club", "Public Speaking Forum"]
+    },
+    {
+      "department_name": "Mathematics",
+      "established_ug": 1969,
+      "established_pg": 2003,
+      "research_centre_status": "Research Department since 2007",
+      "ug_programs": ["B.Sc. Mathematics (Aided/SF)"],
+      "pg_programs": ["M.Sc. Mathematics (SF)"],
+      "research_programs": ["M.Phil. Mathematics (SF)", "Ph.D. Mathematics (SF)"],
+      "faculty_strength": {"note": "DST FIST sponsored department; faculty specialize in Stochastic Processes, Graph Theory, and Number Theory."},
+      "uniqueness": {"note": "Run the 'Akshayapathra' noon meal scheme for poor students, supported by faculty and donors."}
+    },
+    {
+      "department_name": "Economics",
+      "established_ug": 1969,
+      "established_pg": 2014,
+      "research_centre_status": "Research Department (Ph.D. available)",
+      "ug_programs": ["B.A. Economics (Aided)"],
+      "pg_programs": ["M.A. Economics (SF)"],
+      "research_programs": ["Ph.D. Economics"],
+      "faculty_strength": {"aided": 4, "self_supporting": 1, "note": "Aided faculty includes 3 Ph.D. holders."},
+      "insight": "One of the oldest departments, actively involved in rural and regional economic research."
+    },
+    {
+      "department_name": "Tamil",
+      "established_ug": 1967,
+      "established_pg": 2017,
+      "research_centre_status": "Ph.D. available",
+      "ug_programs": ["B.A. Tamil Literature (Aided/SF)"],
+      "pg_programs": ["M.A. Tamil Literature (SF)"],
+      "research_programs": ["Ph.D. Tamil"],
+      "faculty_strength": {"aided": 4, "self_supporting": 13, "note": "9 Ph.D. holders among total faculty."},
+      "uniqueness": "Mission to promote social justice, ethical values, and literary education from Sanskrit period to present."
+    },
+    {
+      "department_name": "Botany",
+      "established_ug": 2015,
+      "established_pg": 2018,
+      "research_centre_status": "Research Centre since 2018 (M.Phil. & Ph.D.)",
+      "ug_programs": ["B.Sc. Botany (SF)"],
+      "pg_programs": ["M.Sc. Botany (SF)"],
+      "research_programs": ["M.Phil. Botany", "Ph.D. Botany"],
+      "faculty_strength": {"total": 6, "note": "All faculty members are PhD holders."},
+      "funding_and_infrastructure": {"note": "Completed 7 DST Inspire Camps and multiple Major/Minor Research Projects (over ₹80 Lakhs in funding). Laboratories are equipped with PCR, Laminar Air Flow, etc."}
+    },
+    {
+      "department_name": "Management Studies (BBA/MBA)",
+      "ug_programs": ["B.B.A. (Business Administration, AICTE Approved, SF)"],
+      "pg_programs": ["M.B.A. (Business Administration, AICTE Approved, SF)"],
+      "research_programs": [],
+      "specializations": ["Practical business skills", "Entrepreneurship"],
+      "faculty_strength": {"total": 5, "type": "Self-Financed/Unaided"}
+    },
+    {
+      "department_name": "Data Science",
+      "pioneer_status": "Introduced Data Science programs in Bharathidasan University affiliated colleges (2017-2018)",
+      "ug_programs": ["B.Sc. Data Science (SF)"],
+      "pg_programs": ["M.Sc. Data Science (SF)"],
+      "faculty_strength": {"total": 4, "type": "Self-Financed/Unaided"}
+    },
+    {
+      "department_name": "Other Allied/SF Programs",
+      "ug_programs": ["B.Sc. Hotel Management and Catering Science (SF)", "B.Sc. Nutrition & Dietetics (SF)", "B.A. History (SF/Allied)"],
+      "pg_programs": ["M.Sc. Biotechnology (SF)", "M.Sc. Embedded Systems (UGC Sanctioned, SF)"],
+      "research_programs": ["Ph.D. Biotechnology"]
+    }
+  ],
+  "infrastructure_and_facilities": {
+    "campus_details": {
+      "land_area": "35 Acres 75 Cent (approx. 45 Acres total)",
+      "built_up_area": "22390.87 Sqmt",
+      "playground_area": "15 Acres",
+      "classrooms": 69,
+      "laboratories": "9 dedicated Labs + specialized research labs (DST-FIST funded)",
+      "computer_centre_pcs": 350,
+      "internet_connectivity": "Wi-Fi enabled campus with **1 GBPS** speed",
+      "power_supply": "24 hrs HT power supply and **310 KW grid-connected solar power plant**",
+      "seminar_halls": "2 AC Seminar Halls (200 seater each) & 2 Conference Rooms"
+    },
+    "hostel_facilities": {
+      "boys_hostel": {"name": "Mahatma Gandhi Centenary/Highland Hostel", "capacity": 600},
+      "girls_hostel": {"name": "Sir. C.V. Raman Hostel", "capacity": 1500},
+      "faculty_residence": "Yes"
+    },
+    "library": {
+      "volumes": "Over **50,500 books**",
+      "journals_subscribed": 72,
+      "digital_resources_note": "Includes e-books, online journals (1550+), and 25 digital databases.",
+      "automation": "Automated using **KOHA** software",
+      "seating_capacity": "72 + 15"
+    },
+    "unique_facilities": [
+      "300-seater **BPO Services** on campus (for part-time student employment)",
+      "Free Bus Facility for students",
+      "Reverse Osmosis (RO) purified drinking water plant",
+      "Canara Bank ATM on campus",
+      "Exclusive **Central Instrumentation Facility (CIF)** with GCMS, FT-IR, UV-Vis Spectrophotometer."
+    ]
+  },
+  "placements_and_alumni": {
+    "placement_cell": "Training & Placement Cell (NCPC) tied up with Redington Elite Learning Centre.",
+    "placement_stats_2023_24": {
+      "ug_placed_percentage": "88% (B.Sc. students)",
+      "total_domestic_placements": 110,
+      "companies_visited": 36,
+      "highest_salary": "INR 3.0 Lakhs (approx.)",
+      "average_salary": "INR 2.36 Lakhs (approx.)",
+      "median_salary_mca": "₹2.88 LPA",
+      "median_salary_bca": "₹1.43 LPA"
+    },
+    "top_recruiters": [
+      "SBI Life Insurance", 
+      "Vijay Dairy", 
+      "Nielsen IQ", 
+      "Omega Health Care", 
+      "Sanmar (Chemplast)", 
+      "Jio Mobiles", 
+      "Accel Bannari Amman Source", 
+      "DMC LLC Pharmaceuticals Manufacturing Company (OMAN)"
+    ]
+  },
+  "research_and_development": {
+    "cell": "Research and Development Cell (RDC)",
+    "research_centres_list": ["Commerce", "Physics", "Zoology", "Computer Science", "Chemistry", "Mathematics", "Botany", "English", "Economics", "Bio-Technology"],
+    "total_research_guides": 55,
+    "key_infrastructure": ["Exclusive Research Block (8000 sqft)", "Central Instrumentation Facility (CIF)"],
+    "promotion_schemes": [
+      "Management Research Scholarship (₹3,000/month for full-time scholars)", 
+      "Seed Money Grant (₹25,000) for faculty research proposals", 
+      "Incentives for publishing in SCI/UGC Care List journals"
+    ],
+    "notable_projects_funding": "DST-FIST College (₹1.1 Crore sanction), Research projects funded by SERB and UGC.",
+    "special_centers": [
+      "CEAT (Centre for Eco-friendly Agro-Technologies)", 
+      "CENDR (Centre for Environmental Diseases and Research)"
+    ]
+  },
+  "administrative_and_student_support": {
+    "key_personnel": {
+      "principal": "Dr. A. Venkatesan",
+      "president": "Er. Pon. Balasubramaniyam",
+      "secretary": "Mr. Pon. Ravichandran",
+      "vice_principal": "Dr. K.T. Tamilmani",
+      "dean_research": "Dr. P. Neelanarayanan",
+      "iqac_coordinator": "Dr. K. Saravanan",
+      "dean_academic_affairs": "Dr. V. Saavithri",
+      "controller_of_examinations": "Dr. M. Mary Anbumathy",
+      "sf_coordinator": "Dr. M. Meenakshisundaram"
+    },
+    "key_cells_and_committees": [
+      "Internal Quality Assurance Cell (IQAC)",
+      "Curriculum Development Cell (CDC)",
+      "Research and Development Cell (RDC)",
+      "Women Wellfare Cell",
+      "Anti-Drug Cell",
+      "Grievance & Redressal Cell",
+      "SC / ST / OBC / Minority Cells",
+      "Anti-Ragging Committee",
+      "Internal Complaints Committee (Anti-Sexual Harassment)",
+      "NSS, NCC, and Student Union Council"
+    ]
+  },
+  "examination_information": {
+    "authority": "Office of the Controller of Examinations (COE)",
+    "evaluation_system": "Choice Based Credit System (CBCS) with Grading/CGPA evaluation for Autonomous status."
+  }
+}
