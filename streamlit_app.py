@@ -1,29 +1,31 @@
 # streamlit_app.py
 
 import streamlit as st
-import nltk
+import nltk 
+
+# -----------------------------------------------------
+# CRITICAL FIX: DOWNLOAD ALL NLTK DATA FOR STREAMLIT CLOUD
+# -----------------------------------------------------
+# Use a try-except block to safely download all necessary NLTK components once.
+try:
+    # Check for 'punkt' (fixes the error you are seeing)
+    nltk.data.find('tokenizers/punkt')
+    # Check for 'wordnet' (common requirement)
+    nltk.data.find('corpora/wordnet') 
+except LookupError:
+    # If any resource is not found, download the required ones
+    nltk.download('punkt')
+    nltk.download('wordnet')
+# -----------------------------------------------------
+# END NLTK FIX
+# -----------------------------------------------------
 import numpy as np
 import json
 import pickle
 from nltk.stem.lancaster import LancasterStemmer
 from tensorflow.keras.models import load_model
 import re 
-import numpy.random as np_random # Use numpy.random for random choices
-
-# -----------------------------------------------------
-# CRITICAL FIX: DOWNLOAD NLTK DATA FOR STREAMLIT CLOUD
-# -----------------------------------------------------
-# This ensures the 'punkt' tokenizer data is available on the cloud server.
-try:
-    # Check if 'punkt' data is already available
-    nltk.data.find('tokenizers/punkt')
-except LookupError: # <--- CHANGED TO CATCH LookupError which is raised by nltk.data.find()
-    # If not found, download it. This only runs the first time the app starts.
-    nltk.download('punkt')
-# -----------------------------------------------------
-# END NLTK FIX
-# -----------------------------------------------------
-
+import numpy.random as np_random 
 
 # Initialize Stemmer
 stemmer = LancasterStemmer()
