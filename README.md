@@ -1,45 +1,47 @@
-# College Chatbot
+# NMC College Chatbot
 
-A rule-based College Chatbot developed using Python, Flask, and JSON to provide instant responses to student queries. The chatbot assists users with information related to courses, departments, admissions, facilities, and other college-related services through a simple web interface.
+An AI-powered College Chatbot developed using Python, TensorFlow/Keras, NLTK, and Streamlit. The chatbot helps students access information about courses, departments, admissions, facilities, and other college-related services through a conversational interface.
 
 ## Features
 
-* Rule-based chatbot system
-* Web interface using Flask
-* JSON-based knowledge repository
-* Fast and lightweight
-* Easy to customize and extend
-* Handles common college-related queries
+* AI-based intent recognition
+* Natural Language Processing using NLTK
+* Streamlit web interface
+* College information retrieval
+* Interactive conversational experience
+* Easily customizable knowledge base
 
-## Tech Stack
+## Technologies Used
 
 * Python
-* Flask
-* HTML/CSS
+* TensorFlow / Keras
+* NLTK
+* Streamlit
 * JSON
+* Pickle
 
 ## Project Structure
 
 ```text
-final_cb/
+nmc_chatbot/
 │
-├── templates/          # HTML templates
-├── __pycache__/        # Python cache files
-├── app.py              # Flask application
-├── chatbot.py          # Chatbot logic
-├── nmc_data.json       # Knowledge base / responses
-├── requirements.txt    # Project dependencies
-├── Procfile            # Deployment configuration
-└── .env                # Environment variables
+├── streamlit_app.py      # Streamlit application
+├── train_chatbot.py      # Model training script
+├── chatbot_model.keras   # Trained chatbot model
+├── training_data.pkl     # Processed training data
+├── intents.json          # Intents and responses
+├── college_data.json     # College information database
+├── requirements.txt      # Dependencies
+└── README.md
 ```
 
 ## Installation
 
-### Clone the Repository
+### Clone Repository
 
 ```bash
-git clone https://github.com/your-username/final_cb.git
-cd final_cb
+git clone https://github.com/your-username/nmc_chatbot.git
+cd nmc_chatbot
 ```
 
 ### Install Dependencies
@@ -51,30 +53,24 @@ pip install -r requirements.txt
 ### Run the Application
 
 ```bash
-python app.py
+streamlit run streamlit_app.py
 ```
 
-The application will start on:
-
-```text
-http://localhost:5000
-```
-
-## Sample Queries
+## Example Queries
 
 * What courses are available?
 * Tell me about admissions.
-* Where is the library located?
 * What facilities does the college provide?
-* How can I contact the administration?
+* How can I contact the college?
+* Information about departments.
 
 ## Future Enhancements
 
-* AI-powered responses
-* Voice assistant integration
-* Database support
-* Student login system
-* Mobile-friendly interface
+* Voice-enabled chatbot
+* Multilingual support
+* Database integration
+* Student portal integration
+* Generative AI support
 
 ## Author
 
@@ -83,4 +79,4 @@ M.Sc. Data Science
 
 ---
 
-⭐ Feel free to fork, improve, and contribute to this project.
+⭐ If you find this project useful, please give it a star.
